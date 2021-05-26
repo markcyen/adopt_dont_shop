@@ -1,7 +1,8 @@
-Application.destroy_all
-Pet.destroy_all
 Shelter.destroy_all
-ApplicationPet.destroy_all
+Pet.destroy_all
+VeterinaryOffice.destroy_all
+Veterinarian.destroy_all
+Application.destroy_all
 
 3.times do
   shelter = FactoryBot.create(:shelter)
@@ -19,6 +20,6 @@ end
   end
 end
 
-5.times do
+10.times do
   application = FactoryBot.create(:application)
 end
