@@ -8,20 +8,23 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
     <section class="topnav">
       <a class="active"><%= link_to "Pets", "/pets" %></a>
       <a class="active"><%= link_to "Shelters", "/shelters" %></a>
       <a class="active"><%= link_to "Veterinarians", "/veterinarians" %></a>
       <a class="active"><%= link_to "Veterinary Offices", "/veterinary_offices" %></a>
     </section>
+    
+    <% flash.each do |type, msg| %>
+      <div style="color:red; font-size:30px;">
+        <%= msg %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

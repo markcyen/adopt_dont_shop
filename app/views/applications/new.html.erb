@@ -4,7 +4,6 @@
 </head>
 
 <body style="font-size:20px">
-  <h3 style="color:red"><%= flash[:notice] %></h3><br>
   <%= form_with model: @application, url: "/applications", method: :post, local: true do |f| %>
     <div><%= f.label :first_name, 'First Name' %> <%= f.text_field :first_name, value: @application.first_name %></div>
     <div><%= f.label :middle_name, 'Middle Name (optional)' %> <%= f.text_field :middle_name, value: @application.middle_name %></div>
