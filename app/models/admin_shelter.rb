@@ -1,0 +1,2 @@
+class AdminShelter < ApplicationRecord
+end
