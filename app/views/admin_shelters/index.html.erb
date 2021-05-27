@@ -1,11 +1,21 @@
 <html>
 <head>
-  <h1>Shelters Page</h1>
+  <h1>Admin Shelters Page</h1>
 </head>
 
 <body>
-  <% @shelters.each do |shelter| %>
-    <p><%= link_to shelter.name, "/shelters/#{shelter.id}" %></p>
-  <% end %>
+  <div>Shelter's with Pending Applications</div><br>
+  <section id="shelters_with_pending_apps">
+    <% @applications.pending.distinct.each do |shelter| %>
+      <p><%= link_to shelter.name, "/shelters/#{shelter.id}" %></p>
+    <% end %>
+  </section><br>
+
+  <div>List of Shelters</div>
+  <section id="list_of_shelters">
+    <% @shelters.each do |shelter| %>
+      <p><%= link_to shelter.name, "/shelters/#{shelter.id}" %></p>
+    <% end %>
+  </section>
 </body>
 </html>
