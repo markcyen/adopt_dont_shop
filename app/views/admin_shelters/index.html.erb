@@ -1,0 +1,11 @@
+<html>
+<head>
+  <h1>Shelters Page</h1>
+</head>
+
+<body>
+  <% @shelters.each do |shelter| %>
+    <p><%= link_to shelter.name, "/shelters/#{shelter.id}" %></p>
+  <% end %>
+</body>
+</html>
