@@ -14,4 +14,10 @@ class Application < ApplicationRecord
   def pet_to_adopt(pet)
     pets << pet
   end
+
+  def self.pending
+    select('shelters.*')
+    .joins(pets: :shelter)
+    .where(status: 'Pending')
+  end
 end
